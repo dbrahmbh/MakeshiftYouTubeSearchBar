@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Creates title shown on filters page -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 text-center">
+                <h1><br></h1>
+                <h1>{% block title %} Filters {% endblock %}</h1>
+                <p>Add filters to refine your search!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creates the form that allows the user to input search result filters -->
+    <div class="container">
+        <form method="POST">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="results_regex">Results Regex (to filter the video titles by regex)</label>
+                    <input type="text" class="form-control" name="results_regex" value="{{ setr.results_regex }}" aria-describedby="results_regex">
+                </div>
+                <div class="form-group col">
+                    <label for="maxResults">Number of Results wanted (capped at 50)</label>
+                    <input type="text" class="form-control" name="maxResults" value="{{ setr.maxResults }}" aria-describedby="maxResults">
+                </div>
+                <div class="form-group col">
+                    <label for="reverse_results">Results Reverse ("True" for yes; "False" for no)</label>
+                    <input type="text" class="form-control" name="reverse_results" value="{{ setr.reverse_results }}" aria-describedby="reverse_results">
+                </div>
+            </div>
+            <br>
+            <div class="form-row text-center">
+                <button type="submit" class="btn btn-success">Save Filters!</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

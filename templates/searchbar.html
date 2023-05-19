@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Creates title shown on searchbar page -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 text-center">
+                <h1><br></h1>
+                <h1>{% block title %} YouTube Search Bar {% endblock %}</h1>
+                <p>A simple app that takes what you want to search for and returns filtered search results from YouTube!</p>
+            </div>
+        </div>
+    </div>
+
+    <h1><br></h1>
+
+    <!-- Creates text above the search bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 text-center">
+                <h2>Welcome to the Makeshift YouTube Search Bar!</h2><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creates search bar as a form that can take in a keyword for server usage -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6 offset-3">
+                <form action="{{ url_for('searchBar') }}" method="POST">
+                    <label for="phrase">Search:</label>
+                    <input type="text" id="phrase" name="phrase" placeholder="word or phrase">
+                    <button type="submit" class="btn btn-success">Submit</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

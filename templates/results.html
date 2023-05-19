@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Creates title shown on results page -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 text-center">
+                <h1><br></h1>
+                <h1>{% block title %} Results {% endblock %}</h1>
+                <p>Here's the search results from YouTube!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uses Jinja2 for loop to print out all of the results in their own respective panels -->
+    <div class="card mb-3 p-3 my-4">
+        {% for video in videoList %}
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ video.thumbnail_url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8 custom-bg3 card border-danger">
+                <div class="card-body text-danger">
+                    <h5 class="card-title">{{ video.videoTitle }}</h5>
+                    <p class="card-text"><b>Channel Title: </b>{{ video.channelTitle }}</p>
+                    <p class="card-text"><b>Description: </b>{{ video.description }}</p>
+                    <p class="card-text"><b>Date Published: </b>{{ video.datePublished }}</p>
+                    <a class="btn btn-success" href="{{ video.url }}" role="button" target="_blank">Watch this Video!</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+{% endblock %}
