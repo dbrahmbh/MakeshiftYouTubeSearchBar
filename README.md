@@ -96,7 +96,24 @@ A web application that allows users to search for YouTube videos based on keywor
 
    Ensure the virtual environment is active.
 
-2. **Start the Flask Application**:
+2. **Start the Database (Optional for Inspection or Debugging)**:
+
+   If you’d like to open or inspect the SQLite database directly, use the following command:
+
+   ```bash
+   sqlite3 youtube.sqlite
+   ```
+
+   This opens an interactive session with your SQLite database where you can run SQL commands like:
+
+   ```sql
+   .tables
+   SELECT * FROM video;
+   ```
+
+   Type `.exit` to leave the SQLite prompt.
+
+3. **Start the Flask Application**:
 
    ```bash
    python youtube_api.py
