@@ -21,3 +21,5 @@ def init_db():
 
     # save the database
     db_session.commit()
+    
+    print("Database created")

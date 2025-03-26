@@ -1,0 +1,9 @@
+flask
+flask-bootstrap
+flask-sqlalchemy
+flask-markdown
+sqlalchemy
+google-api-python-client
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
